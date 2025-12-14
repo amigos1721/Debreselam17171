@@ -12,8 +12,10 @@ from telegram.ext import Application, CommandHandler, CallbackQueryHandler, Mess
 
 # ==================== CONFIGURATION ====================
 # ⚠️ REPLACE THIS WITH YOUR ACTUAL BOT TOKEN FROM @BotFather ⚠️
-BOT_TOKEN = "8231782269:AAELLc-9zJaF0VkiSLpZqUGL7Ry1T1V8AZI"
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 
+if not BOT_TOKEN:
+    raise ValueError("No BOT_TOKEN found. Please set the BOT_TOKEN environment variable.")
 DEVELOPER_NAME = "Kaleab Menberesilassie"
 
 # ==================== SIMPLE DATABASE ====================
